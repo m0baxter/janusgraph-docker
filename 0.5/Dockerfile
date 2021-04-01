@@ -42,6 +42,7 @@ RUN apt update -y && apt install -y gpg unzip curl && \
 
 COPY conf/ ${JANUS_HOME}/conf/gremlin-server/
 COPY scripts/remote-connect.groovy ${JANUS_HOME}/scripts/
+COPY scripts/empty-sample.groovy ${JANUS_HOME}/scripts/
 
 FROM openjdk:8-jre-slim-buster
 
@@ -82,6 +83,8 @@ EXPOSE 8182
 
 WORKDIR ${JANUS_HOME}
 USER janusgraph
+
+RUN sed -i "s/storage.hostname=127.0.0.1/storage.hostname=jce-cassandra/g" conf/janusgraph-cql-configurationgraph.properties
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "janusgraph" ]
