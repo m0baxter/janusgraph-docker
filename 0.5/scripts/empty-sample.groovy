@@ -33,6 +33,6 @@ graphs = ConfiguredGraphFactory.getGraphNames()
 
 if ( graphs )
 
-   myGraph = ConfiguredGraphFactory.open("testgraph")
-   globals << [testgraph : myGraph.traversal()]
+   myGraph = ConfiguredGraphFactory.open("tim_dev")
+   globals << [tim_dev : myGraph.traversal()]
 
