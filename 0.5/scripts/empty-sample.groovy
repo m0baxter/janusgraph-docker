@@ -31,10 +31,10 @@ globals << [g : graph.traversal()]
 
 graphs = ConfiguredGraphFactory.getGraphNames()
 
- if ( graphs )
- 
-    //myGraph1 = ConfiguredGraphFactory.open("azteca_dev")
-    myGraph2 = ConfiguredGraphFactory.open("tim_graph")
-    //globals << [azteca_dev : myGraph1.traversal()]
-    globals << [tim_graph : myGraph2.traversal()]
+if ( graphs )
+
+   //myGraph1 = ConfiguredGraphFactory.open("azteca_dev")
+   myGraph2 = ConfiguredGraphFactory.open("tim_graph")
+   //globals << [azteca_dev : myGraph1.traversal()]
+   globals << [tim_graph : myGraph2.traversal()]
 
